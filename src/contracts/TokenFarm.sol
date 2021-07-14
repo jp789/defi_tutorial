@@ -1,6 +1,19 @@
+// try pragma solidity >=0.5.0; 
+// and see if that helps with the syntax issues
+pragma solidity ^0.5.0;
 
-pragma solidity ^0.5.0
+import "./DappToken.sol";
+import "./DaiToken.sol";
 
 contract TokenFarm{
+    
     string public name = "Dapp Token farm";
+    
+    DappToken public dappToken;
+    DaiToken public daiToken;
+    
+    constructor(DappToken _dappToken, DaiToken _daiToken) public{
+        dappToken = _dappToken;
+        daiToken  = _daiToken;
+    }
 }
